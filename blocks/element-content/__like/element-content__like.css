@@ -2,4 +2,11 @@
     font-size: 36px;
     margin: 0px;
     line-height: 28px;
+    width: 22px;
+    height: 19px;
+}
+
+.element-content__like:hover {
+    opacity: .6;
+    cursor: pointer;
 }

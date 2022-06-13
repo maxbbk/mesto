@@ -1,0 +1,20 @@
+.popup-body__close {
+    top: -111px;
+    color: white;
+    position: absolute;
+    font-size: 48px;
+    left: 434px;
+}
+
+.popup-body__close:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+    .popup-body__close {
+        top: -67px;
+    font-size: 27px;
+    left: 260px;
+}
+}

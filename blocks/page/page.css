@@ -15,7 +15,7 @@
 
 @media screen and (max-width: 320px) {
   .page {
-    width: 100%;
+    width: calc(100% - 38px);
     grid-template-rows: 28px 56px 40px min-content 37px min-content 50px min-content 60px;
   }
 }

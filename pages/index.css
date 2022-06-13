@@ -1,7 +1,7 @@
 @import url('../blocks/body/body.css');
 @import url('../blocks/page/page.css');
 @import url('../vendor/normalize.css');
-
+@import url("../vendor/fonts/Inter/inter.css");
 @import url('../blocks/header/header.css');
 @import url('../blocks/header/__logo/logo.css');
 
@@ -22,12 +22,10 @@
 @import url('../blocks/popup-container/__name/popup-container__name.css');
 @import url('../blocks/popup-container/__title/popup-container__title.css');
 @import url('../blocks/popup-container/__about/popup-container__about.css');
+@import url('../blocks/popup-container/__close/popup-body__close.css');
+@import url('../blocks/popup-container/__button/popup-container__button.css');
 
 
-
-@import url('../blocks/popup-body/__container/popup-body__container.css');
-@import url('../blocks/popup-body/__close/popup-body__close.css');
-@import url('../blocks/popup-body/');
 
 
 

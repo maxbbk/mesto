@@ -8,6 +8,9 @@
     display: flex;
 }
 
+.profile-info__button:hover {
+    opacity: 0.6;
+}
 
 @media screen and (max-width: 320px) {
     .profile-info__button {

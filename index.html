@@ -10,7 +10,7 @@
   <body class="body">
     <div class="page">
       <header class="header">
-        <img class="logo" src="./images/Vector.png" alt="дед" />
+        <img class="logo" src="./images/Vector.svg" alt="дед" />
       </header>
 
       <content class="profile">
@@ -31,12 +31,10 @@
             <div class="popup-body">
                 <div class="popup-container">
                     <p class="popup-container__title">Редактировать профиль</p>
-                    <form action="">
-                        <input type="popup-container__name" placeholder="Жак-Ив Кусто">
-                        <input type="popup-container__about" placeholder="Исследователь океана">
-                        <button>Сохранить</button>
-                    </form>
-                    <div class="popup-body__close">&#10006</div>
+                    <input class="popup-container__name" placeholder="Жак-Ив Кусто">
+                    <input class="popup-container__about" placeholder="Исследователь океана">
+                    <button class="popup-container__button">Сохранить</button>
+                    <p class="popup-body__close">&#10006</p>
                 </div>
             </div>
         </div>
@@ -48,7 +46,7 @@
             <img class="element__img" src="./images/kirill-pershin.png">
             <div class="element-content">
                 <p class="element-content__text">Карачаевск</p>
-                <p class="element-content__like">&#9825;</p>
+                <img src="./images/like.svg" class="element-content__like">
             </div>
         </div>
       
@@ -91,7 +89,6 @@
                 <p class="element-content__like">&#9825;</p>
             </div>
         </div>
-
       </content>
       <footer class="footer">
         <p class="footer__coopyright">© 2020 Mesto Russia</p>

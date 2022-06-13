@@ -1,3 +1,13 @@
 .popup-container__title {
-    
+    font: 900 24px/29px 'inter' , 'Arial', 'sans-serif';
+    margin: 0px;
+    padding: 34px 0px 54px 0px;
+    grid-column: 2/3;
+}
+
+@media screen and (max-width: 320px) {
+    .popup-container__title {
+        font: 900 18px/22px 'inter' , 'Arial', 'sans-serif';
+        padding: 25px 0px 75px 0px;
+    }
 }
