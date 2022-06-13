@@ -1,0 +1,17 @@
+.profile-info__button {
+    width: 10px;
+    height: 10px;
+    grid-column: 3/4;
+    padding: 7px;
+    border: 1px solid #FFFFFF;
+    margin-bottom: 3px;
+    display: flex;
+}
+
+
+@media screen and (max-width: 320px) {
+    .profile-info__button {
+        width: 5px;
+        height: 5px;
+    }
+  }

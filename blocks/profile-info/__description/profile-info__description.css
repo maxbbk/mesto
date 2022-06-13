@@ -1,0 +1,13 @@
+.profile-info__description {
+    color: white;
+    font: 400 18px/22px 'inter' , 'Arial', 'sans-serif';
+    margin: 0px;
+    grid-row: 3/4;
+}
+
+@media screen and (max-width: 320px) {
+    .profile-info__description {
+        font: 400 14px/17px 'inter' , 'Arial', 'sans-serif';
+
+    }
+  }

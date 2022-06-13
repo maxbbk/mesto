@@ -1,0 +1,22 @@
+.page {
+  max-width: 1280px;
+  width: calc(100% - 400px);
+  background-color: black;
+  margin: 0px auto;
+  display: grid;
+  grid-template-rows: 45px 74px 40px min-content 51px min-content 67px min-content 60px;
+}
+
+@media screen and (max-width: 1050px) {
+  .page {
+    width: calc(100% - 50px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .page {
+    width: 100%;
+    grid-template-rows: 28px 56px 40px min-content 37px min-content 50px min-content 60px;
+  }
+}
+

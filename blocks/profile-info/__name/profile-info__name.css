@@ -1,0 +1,15 @@
+.profile-info__name {
+    color: white;
+    font: 500 42px/48px 'inter' , 'Arial', 'sans-serif';
+    margin: 0px;
+    grid-row: 1/2;
+    letter-spacing: 2.1px;
+}
+
+@media screen and (max-width: 1050px) {
+    .profile-info__name {
+        font: 500 27px/32px 'inter' , 'Arial', 'sans-serif';
+        padding-top: 29px;
+    }
+  }
+
