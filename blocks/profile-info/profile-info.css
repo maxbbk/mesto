@@ -3,7 +3,7 @@
     grid-column: 2/3;
     padding-left: 30px;
     grid-template-columns: max-content 18px min-content;
-    grid-template-rows: min-content 16px min-content;
+    grid-template-rows: min-content 7px min-content;
     align-items: end;
 }
 

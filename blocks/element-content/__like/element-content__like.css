@@ -4,9 +4,19 @@
     line-height: 28px;
     width: 22px;
     height: 19px;
+    background-image: url('../../../images/like.svg');
 }
 
 .element-content__like:hover {
     opacity: .6;
     cursor: pointer;
+}
+
+.element-content__like_active {
+    font-size: 36px;
+    margin: 0px;
+    line-height: 28px;
+    width: 22px;
+    height: 19px;
+    background-image: url('../../../images/like_active.svg')
 }

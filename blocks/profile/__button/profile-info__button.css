@@ -1,11 +1,10 @@
 .profile-info__button {
-    width: 10px;
-    height: 10px;
+    width: 24px;
+    height: 24px;
     grid-column: 3/4;
-    padding: 7px;
     border: 1px solid #FFFFFF;
-    margin-bottom: 3px;
-    display: flex;
+    margin-bottom: 9px;
+    background-color: black;
 }
 
 .profile-info__button:hover {
