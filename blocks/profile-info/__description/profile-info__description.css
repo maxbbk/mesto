@@ -3,11 +3,15 @@
     font: 400 18px/22px 'inter' , 'Arial', 'sans-serif';
     margin: 0px;
     grid-row: 3/4;
+    max-width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 320px) {
     .profile-info__description {
         font: 400 14px/17px 'inter' , 'Arial', 'sans-serif';
-
+        padding-left: 24px;
     }
   }

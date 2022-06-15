@@ -2,6 +2,7 @@
     max-width: 120px;
     border-radius: 50%;
     grid-column: 1/2;
+    margin-right: 30px;
 }
 
 @media screen and (max-width: 1050px) {
@@ -13,5 +14,7 @@
   @media screen and (max-width: 320px) {
     .avatar {
         max-width: 121px;
+        margin-right: 0px;
+        margin-bottom: 28px;
     }
   }

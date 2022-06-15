@@ -1,8 +1,7 @@
 .profile-info {
     display: grid;
     grid-column: 2/3;
-    padding-left: 30px;
-    grid-template-columns: max-content 18px min-content;
+    grid-template-columns: max-content min-content;
     grid-template-rows: min-content 7px min-content;
     align-items: end;
 }
@@ -10,7 +9,7 @@
 @media screen and (max-width: 320px) {
     .profile-info {
         text-align: center;
-        grid-template-rows: min-content 8px min-content;
         grid-template-columns: max-content 0px min-content;
+        
     }
   }

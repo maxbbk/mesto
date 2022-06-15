@@ -32,13 +32,18 @@ let popupContainerButton = document.querySelector('.popup-container__button')
 function addName() {
     let name = document.querySelector('.popup-container__name');
     let about = document.querySelector('.popup-container__about');
+
+    let profileInfoName = document.querySelector('.profile-info__name');
+    let profileInfoDescription = document.querySelector('.profile-info__description');
   
-    profileInfo.innerHTML = `
-          <p class="profile-info__name">${name.value}</p>
-          <p class="profile-info__description">${about.value}</p>
-          <button class="profile-info__button"><img src="./images/pen.png"></button>
-        `;
+    profileInfoName.textContent = `${name.value}`;
+    profileInfoDescription.textContent = `${about.value}`;
+   
     name.value = '';
     about.value = '';
+    
+    
+    closePopup()
   }
   popupContainerButton.addEventListener('click', addName);
+
