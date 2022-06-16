@@ -11,6 +11,7 @@
     background-repeat: no-repeat;
     margin-left: 18px;
     cursor: pointer;
+    padding: 0px;
 }
 
 .profile-info__button:hover {

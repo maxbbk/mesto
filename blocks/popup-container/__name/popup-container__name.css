@@ -5,9 +5,11 @@
     border: 1px;
     width: 358px;
     height: 27px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000000;
     grid-column: 2/3;
     outline: none;
+    border-radius: 0px;
+    padding-bottom: 13px;
 }
 
 

@@ -1,4 +1,4 @@
-.popup-body__close {
+.popup-container__close {
     top: -111px;
     color: white;
     position: absolute;
@@ -6,13 +6,13 @@
     left: 434px;
 }
 
-.popup-body__close:hover {
+.popup-container__close:hover {
     opacity: .6;
     cursor: pointer;
 }
 
 @media screen and (max-width: 320px) {
-    .popup-body__close {
+    .popup-container__close {
         top: -67px;
     font-size: 27px;
     left: 260px;

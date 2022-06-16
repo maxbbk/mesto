@@ -1,6 +1,6 @@
 let popup = document.querySelector('.popup');
 let profileInfoButton = document.querySelector('.profile-info__button');
-let popupBodyClose = document.querySelector('.popup-body__close');
+let popupBodyClose = document.querySelector('.popup-container__close');
 
 
 function openPopup(event) {

@@ -6,4 +6,12 @@
     column-gap: 17px;
     row-gap: 20px;
     justify-items: center;
+    padding-top: 52px;
 }
+
+@media screen and (max-width: 320px) {
+    .elements {
+        padding-top: 35px;
+    }
+  }
+  
