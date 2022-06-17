@@ -1,14 +1,18 @@
 .popup-container__close {
-    top: -111px;
+    width: 32px;
+    height: 32px;
     color: white;
     position: absolute;
     font-size: 48px;
     left: 434px;
+    background-image: url('../../../images/close_pc.svg');
+    background-color: black;
+    border: none;
 }
 
 .popup-container__close:hover {
     opacity: .6;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 @media screen and (max-width: 320px) {
@@ -16,5 +20,6 @@
         top: -67px;
     font-size: 27px;
     left: 260px;
+    background-image: url('../../../images/close_mobile.svg');
 }
 }
