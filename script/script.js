@@ -44,7 +44,7 @@ function addName() {
     
     
     closePopup();
-    return addName;
+    Event.preventDefault();
   }
   popupContainerButton.addEventListener('click', addName);
 
