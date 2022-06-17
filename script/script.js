@@ -43,7 +43,8 @@ function addName() {
     about.value = '';
     
     
-    closePopup()
+    closePopup();
+    return addName;
   }
   popupContainerButton.addEventListener('click', addName);
 
