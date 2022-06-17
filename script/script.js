@@ -1,6 +1,6 @@
 let popup = document.querySelector('.popup');
-let profileInfoButton = document.querySelector('.profile-info__button');
-let popupBodyClose = document.querySelector('.popup-container__close');
+let profileButton = document.querySelector('.profile-info__button');
+let popupClose = document.querySelector('.popup-container__close');
 let popupContainerButton = document.querySelector('.popup-container__button')
 
 
@@ -9,18 +9,20 @@ let jobInput = document.querySelector('.popup-container__about_job_input');
 let profileName = document.querySelector('.profile-info__name');
 let profileDescription = document.querySelector('.profile-info__description');
 
+let like = document.querySelector('.element-content__like')
 
 function openPopup(event) {
-    nameInput.textContent = profileName;
-    jobInput.textContent = profileDescription;
     popup.classList.add('popup__opened')
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileDescription.textContent;
+
 }
-profileInfoButton.addEventListener('click', openPopup);
+profileButton.addEventListener('click', openPopup);
 
 function closePopup(event) {
     popup.classList.remove('popup__opened')
 }
-popupBodyClose.addEventListener('click', closePopup);
+popupClose.addEventListener('click', closePopup);
 
 function addName(event) {
     event.preventDefault();
@@ -30,7 +32,7 @@ function addName(event) {
   }
   popupContainerButton.addEventListener('click', addName);
 
-let like = document.querySelector('.element-content__like')
+
 function likeActive(event) {
     like.classList.remove('element-content__like')
     like.classList.add('element-content__like_active')
