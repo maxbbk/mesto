@@ -20,7 +20,8 @@ function openPopup(event) {
 profileButton.addEventListener('click', openPopup);
 
 function closePopup(event) {
-    popup.classList.remove('popup__opened')
+    popup.classList.remove('popup__opened');
+    event.preventDefault();
 }
 popupClose.addEventListener('click', closePopup);
 
@@ -34,7 +35,6 @@ function addName(event) {
 
 
 function likeActive(event) {
-    like.classList.remove('element-content__like')
     like.classList.add('element-content__like_active')
 }
 like.addEventListener('click', likeActive)

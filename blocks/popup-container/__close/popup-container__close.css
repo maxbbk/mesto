@@ -4,10 +4,12 @@
     color: white;
     position: absolute;
     font-size: 48px;
-    left: 434px;
+    left: 438px;
+    top: -39px;
     background-image: url('../../../images/close_pc.svg');
     background-color: black;
     border: none;
+    background-repeat: no-repeat;
 }
 
 .popup-container__close:hover {
@@ -17,9 +19,10 @@
 
 @media screen and (max-width: 320px) {
     .popup-container__close {
-        top: -67px;
-    font-size: 27px;
-    left: 260px;
-    background-image: url('../../../images/close_mobile.svg');
+        top: -36px;
+        font-size: 27px;
+        left: 262px;
+        padding: 0px;
+        background-image: url(../../../images/close_mobile.svg);
 }
 }

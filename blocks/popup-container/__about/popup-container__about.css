@@ -1,18 +1,23 @@
 .popup-container__about {
     font: 400 14px/17px 'inter' , 'Arial', 'sans-serif';
     border: 1px;
-    width: 358px;
-    height: 27px;
     border-bottom: 1px solid #000000;
-    padding-top: 30px;
     grid-column: 2/3;
     outline: none;
+    height: 27px;
     border-radius: 0px;
-    padding-bottom: 13px;
+}
+
+.popup-container__about:first-of-type {
+    margin-bottom: 28px;
 }
 
 @media screen and (max-width: 320px) {
     .popup-container__about {
         width: 238px;
+        
+    }
+    .popup-container__about:first-of-type {
+        margin-bottom: 26px;
     }
 }

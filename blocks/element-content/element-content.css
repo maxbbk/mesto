@@ -1,8 +1,8 @@
 .element-content {
-    width: 246px;
-    height: 23px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 0px 31px 0px;
+    padding: 25px 21px 25px 15px;
+    box-sizing: border-box;
 }
