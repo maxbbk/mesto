@@ -13,5 +13,6 @@
     .profile-info__description {
         font: 400 14px/17px 'inter' , 'Arial', 'sans-serif';
         padding-left: 24px;
+        max-width: 240px;
     }
   }
