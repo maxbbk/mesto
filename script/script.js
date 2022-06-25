@@ -33,7 +33,6 @@ const popupContainerClose = document.querySelector('.new-item__close');
 
 function OpenInfoPopup(event) {
     popupItem.classList.add('popup-item__opened');
-
 }
 profileButton.addEventListener('click', OpenInfoPopup);
 
@@ -41,13 +40,13 @@ profileButton.addEventListener('click', OpenInfoPopup);
 
 function CloseInfoPopup(event) {
     popupItem.classList.remove('popup-item__opened');
-    event.preventDefault();
 }
 popupContainerClose.addEventListener('click', CloseInfoPopup);
 
                         /**Popup info */
 let profileInfoButton = document.querySelector('.profile-info__button');
 let popup = document.querySelector('.popup');
+let popupContainer = document.querySelector('.popup-container');
 let popupContainerButton = document.querySelector('.popup-container__button');
 let popupClose = document.querySelector('.popup-container__close');
 let nameInput = document.querySelector('.popup-container__about_name_input');
@@ -61,7 +60,6 @@ function openPopup(event) {
     popup.classList.add('popup__opened');
     nameInput.value = profileName.textContent;
     jobInput.value = profileDescription.textContent;
-
 }
 profileInfoButton.addEventListener('click', openPopup);
 
@@ -71,11 +69,11 @@ function addName(event) {
     profileDescription.textContent = jobInput.value;
     closePopup();
   }
-  popupContainerButton.addEventListener('click', addName);
+  popupContainer.addEventListener('submit', addName);
 
   function closePopup(event) {
     popup.classList.remove('popup__opened');
-    event.preventDefault();
+    
 }
     popupClose.addEventListener('click', closePopup);
 
@@ -87,27 +85,34 @@ function addName(event) {
 const templateElement = document.querySelector('.template-element').content;
 const elements = document.querySelector('.elements');
 
+const newItemButton = document.querySelector('.new-item__button');
+const newItemName = document.querySelector('.new-item__about_name_input');
+const newItemLink = document.querySelector('.new-item__about_job_input');
+const newItem = document.querySelector('.new-item');
+
 const renderItems = () => {
     initialCards.forEach(renderItem);
 }
 
-const renderItem = (text) => {
+const renderItem = (text) => {  
     const templateClone = templateElement.cloneNode(true);
     templateClone.querySelector('.element-content__text').textContent = text.title;
     templateClone.querySelector('.element__img').src = text.link;
     elements.append(templateClone);
 }
+
+const addCard = (event) => {
+    event.preventDefault();
+    renderItem({title:  newItemName.value, link: newItemLink.value});
+    CloseInfoPopup();
+}
+newItem.addEventListener('submit', addCard );
+
 renderItems();
 
-const newItemButton = document.querySelector('.new-item__button');
-const newItemName = document.querySelector('.new-item__about_name_input');
-const newItemLink = document.querySelector('.new-item__about_name_input');
 
-const cardAdd = () => {
-    initialCards.unshift({title: newItemName.value, link: newItemLink.value});
- 
-}
-newItemButton.addEventListener('click', cardAdd);
+
+
 
 
 
