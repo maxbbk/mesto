@@ -29,10 +29,7 @@ const initialCards = [
                         /**Popup-item */
 const profileButton = document.querySelector('.profile__button');
 const popupItem = document.querySelector('.popup-item');
-const newItemButton = document.querySelector('.new-item__button');
 const popupContainerClose = document.querySelector('.new-item__close');
-const newItemName = document.querySelector('.new-item__about_name_input');
-const newItemJob = document.querySelector('.new-item__about_name_input');
 
 function OpenInfoPopup(event) {
     popupItem.classList.add('popup-item__opened');
@@ -84,6 +81,7 @@ function addName(event) {
 
 
 
+
                         /**Карточки с фото */
 
 const templateElement = document.querySelector('.template-element').content;
@@ -97,23 +95,19 @@ const renderItem = (text) => {
     const templateClone = templateElement.cloneNode(true);
     templateClone.querySelector('.element-content__text').textContent = text.title;
     templateClone.querySelector('.element__img').src = text.link;
-
     elements.append(templateClone);
-
 }
-
-const cardAdd = () => {
-    renderItem(newItemName.text.value);
-    randerItem(newItemJob.text.value);
-}
-newItemButton.addEventListener('click', cardAdd);
-
-
 renderItems();
 
+const newItemButton = document.querySelector('.new-item__button');
+const newItemName = document.querySelector('.new-item__about_name_input');
+const newItemLink = document.querySelector('.new-item__about_name_input');
 
-
-
+const cardAdd = () => {
+    initialCards.unshift({title: newItemName.value, link: newItemLink.value});
+ 
+}
+newItemButton.addEventListener('click', cardAdd);
 
 
 
