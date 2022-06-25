@@ -30,19 +30,23 @@ const initialCards = [
 const profileButton = document.querySelector('.profile__button');
 const popupItem = document.querySelector('.popup-item');
 const newItemButton = document.querySelector('.new-item__button');
-const popupContainerClose = document.querySelector('.popup-container__close');
+const popupContainerClose = document.querySelector('.new-item__close');
+const newItemName = document.querySelector('.new-item__about_name_input');
+const newItemJob = document.querySelector('.new-item__about_name_input');
 
 function OpenInfoPopup(event) {
     popupItem.classList.add('popup-item__opened');
-    event.preventDefault();
+
 }
 profileButton.addEventListener('click', OpenInfoPopup);
 
+
+
 function CloseInfoPopup(event) {
-    profileButton.classList.remove('popup-item__opened');
+    popupItem.classList.remove('popup-item__opened');
     event.preventDefault();
 }
-profileButton.addEventListener('click', CloseInfoPopup);
+popupContainerClose.addEventListener('click', CloseInfoPopup);
 
                         /**Popup info */
 let profileInfoButton = document.querySelector('.profile-info__button');
@@ -97,6 +101,13 @@ const renderItem = (text) => {
     elements.append(templateClone);
 
 }
+
+const cardAdd = () => {
+    renderItem(newItemName.text.value);
+    randerItem(newItemJob.text.value);
+}
+newItemButton.addEventListener('click', cardAdd);
+
 
 renderItems();
 
