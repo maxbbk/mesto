@@ -1,0 +1,23 @@
+.new-item__about {
+    font: 400 14px/17px 'inter' , 'Arial', 'sans-serif';
+    border: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    grid-column: 2/3;
+    outline: none;
+    padding-bottom: 13px;
+    border-radius: 0px;
+}
+
+.new-item__about:first-of-type {
+    margin-bottom: 28px;
+}
+
+@media screen and (max-width: 320px) {
+    .new-item__about {
+        width: 238px;
+        
+    }
+    .new-item__about:first-of-type {
+        margin-bottom: 26px;
+    }
+}

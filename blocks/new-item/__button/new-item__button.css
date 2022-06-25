@@ -1,0 +1,27 @@
+.new-item__button {
+    font: 400 18px/22px 'inter' , 'Arial', 'sans-serif';
+    background-color: black;
+    width: 358px;
+    height: 50px;
+    color: white;
+    grid-column: 2/3;
+    border: none;
+    border-radius: 2px;
+    margin: 48px 0px 35px;
+}
+
+.new-item__button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 320px) {
+    .new-item__button {
+        font: 400 14px/17px 'inter' , 'Arial', 'sans-serif';
+        width: 238px;
+        margin-top: 45px;
+        margin-bottom: 25px;
+        height: 46px;
+    }
+}

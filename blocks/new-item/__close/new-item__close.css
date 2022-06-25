@@ -1,0 +1,28 @@
+.new-item__close {
+    width: 32px;
+    height: 32px;
+    color: white;
+    position: absolute;
+    font-size: 48px;
+    left: 438px;
+    top: -39px;
+    background-image: url('../../../images/close_pc.svg');
+    background-color: black;
+    border: none;
+    background-repeat: no-repeat;
+}
+
+.new-item__close:hover {
+    opacity: .6;
+    cursor: pointer;    
+}
+
+@media screen and (max-width: 320px) {
+    .new-item__close {
+        top: -36px;
+        font-size: 27px;
+        left: 262px;
+        padding: 0px;
+        background-image: url(../../../images/close_mobile.svg);
+}
+}
