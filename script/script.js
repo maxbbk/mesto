@@ -127,6 +127,8 @@ function setEventListener (templateClone) {
    removeButton.addEventListener('click', handleDelete);
    const openPopupImg = templateClone.querySelector('.element__img');
    openPopupImg.addEventListener('click', popupImgOpened);
+   const popupImgClose = document.querySelector('.body-img__close');
+    popupImgClose.addEventListener('click', popupImgClosed);
 }
 
                         /* Poupap img */
@@ -137,7 +139,15 @@ function popupImgOpened (evt) {
     bodyImgImg.src = evt.target.closest('.element__img').src;
     const bodyImgText = document.querySelector('.body-img__text');
     bodyImgText.textContent = evt.target.closest('.element').querySelector('.element-content__text').textContent;
+    
 }
+
+function popupImgClosed () {
+    const popupImgClose = document.querySelector('.body-img__close');
+    const popupImg = document.querySelector('.popup-img');
+    popupImg.classList.remove('popup-img_opened');
+}
+
 
 renderItems();
 
