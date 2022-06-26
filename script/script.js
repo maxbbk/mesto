@@ -72,7 +72,7 @@ function addName(event) {
 
   function closePopup(event) {
     popup.classList.remove('popup__opened');
-    
+
 }
     popupClose.addEventListener('click', closePopup);
 
@@ -131,7 +131,7 @@ function setEventListener (templateClone) {
     popupImgClose.addEventListener('click', popupImgClosed);
 }
 
-                        /* Poupap img */
+                        /* Poupap img открытие картинки*/
 function popupImgOpened (evt) {
     const popupImg = document.querySelector('.popup-img');
     popupImg.classList.add('popup-img_opened');
@@ -141,7 +141,7 @@ function popupImgOpened (evt) {
     bodyImgText.textContent = evt.target.closest('.element').querySelector('.element-content__text').textContent;
     
 }
-
+                        /* popupImgClosed закрытие */
 function popupImgClosed () {
     const popupImgClose = document.querySelector('.body-img__close');
     const popupImg = document.querySelector('.popup-img');

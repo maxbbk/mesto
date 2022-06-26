@@ -2,8 +2,8 @@
     width: 32px;
     height: 32px;
     position: absolute;
-    left: 438px;
-    top: -39px;
+    right: -40px;
+    top: -40px;
     background-image: url('../../../images/close_pc.svg');
     background-color: rgba(0, 0, 0, 0);
     border: none;
@@ -18,9 +18,9 @@
 
 @media screen and (max-width: 320px) {
     .body-img__close {
-        top: -36px;
+        right: 0px;
+        top: -35px;
         font-size: 27px;
-        left: 262px;
         padding: 0px;
         background-image: url(../../../images/close_mobile.svg);
 }
