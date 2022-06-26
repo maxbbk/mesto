@@ -54,7 +54,6 @@ let jobInput = document.querySelector('.popup-container__about_job_input');
 let profileName = document.querySelector('.profile-info__name');
 let profileDescription = document.querySelector('.profile-info__description');
 
-let like = document.querySelector('.element-content__like')
 
 function openPopup(event) {
     popup.classList.add('popup__opened');
@@ -84,12 +83,12 @@ function addName(event) {
 
 const templateElement = document.querySelector('.template-element').content;
 const elements = document.querySelector('.elements');
-
 const newItemButton = document.querySelector('.new-item__button');
 const newItemName = document.querySelector('.new-item__about_name_input');
 const newItemLink = document.querySelector('.new-item__about_job_input');
 const newItem = document.querySelector('.new-item');
 
+                        /* Рендеринг */
 const renderItems = () => {
     initialCards.forEach(renderItem);
 }
@@ -98,15 +97,47 @@ const renderItem = (text) => {
     const templateClone = templateElement.cloneNode(true);
     templateClone.querySelector('.element-content__text').textContent = text.title;
     templateClone.querySelector('.element__img').src = text.link;
-    elements.append(templateClone);
+    setEventListener(templateClone);
+
+    elements.prepend(templateClone);
 }
 
+
+                        /* Добавление карточки */
 const addCard = (event) => {
     event.preventDefault();
     renderItem({title:  newItemName.value, link: newItemLink.value});
     CloseInfoPopup();
 }
 newItem.addEventListener('submit', addCard );
+
+                        /* Лайк */
+function handleLike (evt) {
+ evt.target.closest('.element-content__like').classList.toggle('element-content__like_active'); 
+}
+                        /* Удаление */
+function handleDelete (evt) {
+    evt.target.closest('.element').remove(); 
+   }
+                        /* Слушатели */
+function setEventListener (templateClone) {
+    const likeButton = templateClone.querySelector('.element-content__like');
+    likeButton.addEventListener('click', handleLike);
+   const removeButton = templateClone.querySelector('.element-content__delete');
+   removeButton.addEventListener('click', handleDelete);
+   const openPopupImg = templateClone.querySelector('.element__img');
+   openPopupImg.addEventListener('click', popupImgOpened);
+}
+
+                        /* Poupap img */
+function popupImgOpened (evt) {
+    const popupImg = document.querySelector('.popup-img');
+    popupImg.classList.add('popup-img_opened');
+    const bodyImgImg = document.querySelector('.body-img__img');
+    bodyImgImg.src = evt.target.closest('.element__img').src;
+    const bodyImgText = document.querySelector('.body-img__text');
+    bodyImgText.textContent = evt.target.closest('.element-content__text').textContent;
+}
 
 renderItems();
 

@@ -5,4 +5,5 @@
     flex-direction: column;
     background-color: white;
     align-items: center;
+    position: relative;
 }
