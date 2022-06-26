@@ -136,7 +136,7 @@ function popupImgOpened (evt) {
     const bodyImgImg = document.querySelector('.body-img__img');
     bodyImgImg.src = evt.target.closest('.element__img').src;
     const bodyImgText = document.querySelector('.body-img__text');
-    bodyImgText.textContent = evt.target.closest('.element-content__text').textContent;
+    bodyImgText.textContent = evt.target.closest('.element').querySelector('.element-content__text').textContent;
 }
 
 renderItems();
