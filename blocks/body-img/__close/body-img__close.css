@@ -1,15 +1,14 @@
 .body-img__close {
     width: 32px;
     height: 32px;
-    color: white;
     position: absolute;
-    font-size: 48px;
     left: 438px;
     top: -39px;
     background-image: url('../../../images/close_pc.svg');
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
     border: none;
     background-repeat: no-repeat;
+    padding: 0px;
 }
 
 .body-img__close:hover {
