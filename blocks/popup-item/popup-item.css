@@ -6,13 +6,13 @@
     top: 0px;
     width: 100%;
     height: 100%;
-    display: flex;
     visibility: hidden;
     opacity: 0;
     transition: opacity 1s, visibility 0s 1s;
 }
 
 .popup-item__opened {
+    display: flex;
     visibility: visible;
     opacity: 1;
     transition: opacity 0.8s;
