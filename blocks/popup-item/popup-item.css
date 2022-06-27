@@ -13,7 +13,6 @@
 }
 
 .popup-item__opened {
-    display: flex;
     visibility: visible;
     opacity: 1;
     transition: opacity 0.8s;
