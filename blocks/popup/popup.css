@@ -16,5 +16,5 @@
     display: flex;
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.8s
+    transition: opacity 0.8s;
 }
