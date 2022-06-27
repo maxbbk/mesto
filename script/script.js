@@ -1,17 +1,3 @@
-
-                        /* Popup-item */
-const profileButton = document.querySelector('.profile__button');
-
-                        /* Открыть попап добавления карт */
-const popupItem = document.querySelector('.popup-item');
-function OpenInfoPopup(event) {
-    popupItem.classList.toggle('popup-item__opened');
-}
-profileButton.addEventListener('click', OpenInfoPopup);
-
-
-
-                        /**Popup info */
 const profileInfoButton = document.querySelector('.profile-info__button');
 const popup = document.querySelector('.popup');
 const popupContainer = document.querySelector('.popup-container');
@@ -21,15 +7,25 @@ const nameInput = document.querySelector('.popup-container__about_name_input');
 const jobInput = document.querySelector('.popup-container__about_job_input');
 const profileName = document.querySelector('.profile-info__name');
 const profileDescription = document.querySelector('.profile-info__description');
-
-
+const popupItem = document.querySelector('.popup-item');
+const profileButton = document.querySelector('.profile__button');
+const templateElement = document.querySelector('.template-element').content;
+const elements = document.querySelector('.elements');
+const newItemButton = document.querySelector('.new-item__button');
+const newItemName = document.querySelector('.new-item__about_name_input');
+const newItemLink = document.querySelector('.new-item__about_job_input');
+const newItem = document.querySelector('.new-item');
+const popupAddImgClose = document.querySelector('.new-item__close');
+                        /* Открыть попап добавления карт */
+function OpenInfoPopup(event) {
+    popupItem.classList.add('popup-item__opened');
+}
+                        /**Popup info */
 function openPopup(event) {
     popup.classList.add('popup__opened');
     nameInput.value = profileName.textContent;
     jobInput.value = profileDescription.textContent;
 }
-profileInfoButton.addEventListener('click', openPopup);
-
                     /* Форма добавления профайла */
 function addName(event) {
     event.preventDefault();
@@ -37,98 +33,88 @@ function addName(event) {
     profileDescription.textContent = jobInput.value;
     closePopup();
   }
-  popupContainer.addEventListener('submit', addName);
-
                     /* Закрыть попап рекдатора профайла*/
   function closePopup(event) {
     popup.classList.remove('popup__opened');
 }
-    popupClose.addEventListener('click', closePopup);
-
-
-
-
-                        /**Карточки с фото */
-
-const templateElement = document.querySelector('.template-element').content;
-const elements = document.querySelector('.elements');
-const newItemButton = document.querySelector('.new-item__button');
-const newItemName = document.querySelector('.new-item__about_name_input');
-const newItemLink = document.querySelector('.new-item__about_job_input');
-const newItem = document.querySelector('.new-item');
-
                         /* Рендеринг */
 const renderItems = () => {
     initialCards.forEach(renderItem);
 }
-
+/* Я не понимаю этот пункт, который вы мне написали.
+У меня добавление пользовательской карточки написано отдельно.
+Код писал по принципу из лайв кодинга.
+Есть функция, которая клонирует и вставляет в разметку и отдельно, 
+которая добавляет новую карточку. */
 const renderItem = (text) => {  
     const templateClone = templateElement.cloneNode(true);
     templateClone.querySelector('.element-content__text').textContent = text.title;
     templateClone.querySelector('.element__img').src = text.link;
+    templateClone.querySelector('.element__img').alt = text.alt;
     setEventListener(templateClone);
     elements.prepend(templateClone)
 }
-renderItems();
                          /* Добавление пользовательской карточки */
-
-
-                        /* Слушатели */
-function setEventListener (templateClone) {
-    const likeButton = templateClone.querySelector('.element-content__like');
-    likeButton.addEventListener('click', handleLike);
-    const removeButton = templateClone.querySelector('.element-content__delete');
-    removeButton.addEventListener('click', handleDelete);
-    const openPopupImg = templateClone.querySelector('.element__img');
-    openPopupImg.addEventListener('click', popupImgOpened);
-    const popupImgClose = document.querySelector('.body-img__close');
-    popupImgClose.addEventListener('click', popupImgClosed);
-}
-
-
-                        /* Добавление карточки */
 const addCard = (event) => {
     event.preventDefault();
-    renderItem({title:  newItemName.value, link: newItemLink.value});
-    popupAddImgClosed();
+    renderItem({title:  newItemName.value, link: newItemLink.value, alt: newItemName.value});
+    /* Добавил автоподставление alt */
+    AddImgClose();
+    clearInputForm();
 }
-newItem.addEventListener('submit', addCard);
-
+                        /* Очистка формы */
+function clearInputForm () {
+    newItemName.value = '';
+    newItemLink.value = '';
+}
+                        /* Слушатели */
+function setEventListener (templateClone) {
+    const handleLikeButton = templateClone.querySelector('.element-content__like');
+    handleLikeButton.addEventListener('click', likeButton);
+    const handleRemoveButton = templateClone.querySelector('.element-content__delete');
+    handleRemoveButton.addEventListener('click', deleteElement);
+    const handleOpenPopupImg = templateClone.querySelector('.element__img');
+    handleOpenPopupImg.addEventListener('click', openPopupImg);
+    const handleHopupImgClose = document.querySelector('.body-img__close');
+    handleHopupImgClose.addEventListener('click', closePopupImg);
+}
                         /* Закрыть попап добавления карт */
-const popupAddImgClose = document.querySelector('.new-item__close');
-    function popupAddImgClosed(event) {
-popupItem.classList.toggle('popup-item__closed');
-}
-popupAddImgClose.addEventListener('click', popupAddImgClosed);
 
+function AddImgClose(event) {
+popupItem.classList.remove('popup-item__opened');
+}
                         /* Лайк */
-function handleLike (evt) {
+function likeButton (evt) {
  evt.target.closest('.element-content__like').classList.toggle('element-content__like_active'); 
 }
                         /* Удаление */
-function handleDelete (evt) {
+function deleteElement (evt) {
     evt.target.closest('.element').remove(); 
    }
-
-
                         /* Poupap img открытие картинки*/
-function popupImgOpened (evt) {
+function openPopupImg (evt) {
     const popupImg = document.querySelector('.popup-img');
     popupImg.classList.add('popup-img_opened');
     const bodyImgImg = document.querySelector('.body-img__img');
     bodyImgImg.src = evt.target.closest('.element__img').src;
+    bodyImgImg.alt = evt.target.closest('.element__img').alt;
     const bodyImgText = document.querySelector('.body-img__text');
     bodyImgText.textContent = evt.target.closest('.element').querySelector('.element-content__text').textContent;
 }
-                        /* popupImgClosed закрытие */
-function popupImgClosed () {
-    const popupImgClose = document.querySelector('.body-img__close');
+                        /* popupImgClos закрытие */
+function closePopupImg () {
     const popupImg = document.querySelector('.popup-img');
     popupImg.classList.remove('popup-img_opened');
 }   
 
 
-
+profileButton.addEventListener('click', OpenInfoPopup);
+profileInfoButton.addEventListener('click', openPopup);
+popupContainer.addEventListener('submit', addName);
+popupClose.addEventListener('click', closePopup);
+newItem.addEventListener('submit', addCard);
+popupAddImgClose.addEventListener('click', AddImgClose);
+renderItems();
 
 
 
