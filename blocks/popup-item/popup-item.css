@@ -1,6 +1,6 @@
 .popup-item {
     position: fixed;
-
+    display: flex;
     background-color: rgba(0, 0, 0, .8);
     left: 0px;
     top: 0px;
