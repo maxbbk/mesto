@@ -10,3 +10,7 @@
     bottom: 323px;
     cursor: pointer;
 }
+
+.element-content__delete:hover {
+    opacity: .6;
+}
