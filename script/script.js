@@ -18,7 +18,7 @@ const newItem = document.querySelector('.new-item');
 const popupAddImgClose = document.querySelector('.new-item__close');
 const handleHopupImgClose = document.querySelector('.body-img__close');
                         /* Открыть попап добавления карт */
-function OpenInfoPopup(event) {
+function openInfoPopup(event) {
     popupItem.classList.add('popup-item__opened');
 }
                         /**Popup info */
@@ -39,18 +39,6 @@ function addName(event) {
     popup.classList.remove('popup__opened');
 }
                         /* Рендеринг */
-/*const renderItems = () => {
-    initialCards.forEach(twofunction);
-}*/
-
-/* const renderItem = (text) => {  
-    const templateClone = templateElement.cloneNode(true);
-        templateClone.querySelector('.element-content__text').textContent = text.title;
-        templateClone.querySelector('.element__img').src = text.link;
-        templateClone.querySelector('.element__img').alt = text.alt;
-    setEventListener(templateClone);
-    elements.prepend(templateClone)
-} */
 
 function createCard (text) {
     const templateClone = templateElement.cloneNode(true);
@@ -88,7 +76,6 @@ function setEventListener (templateClone) {
     handleRemoveButton.addEventListener('click', deleteElement);
     const handleOpenPopupImg = templateClone.querySelector('.element__img');
     handleOpenPopupImg.addEventListener('click', openPopupImg);
-    handleHopupImgClose.addEventListener('click', closePopupImg);
 }
                         /* Закрыть попап добавления карт */
 
@@ -120,12 +107,13 @@ function closePopupImg () {
 }   
 
 
-profileButton.addEventListener('click', OpenInfoPopup);
+profileButton.addEventListener('click', openInfoPopup);
 profileInfoButton.addEventListener('click', openPopup);
 popupContainer.addEventListener('submit', addName);
 popupClose.addEventListener('click', closePopup);
 newItem.addEventListener('submit', addCard);
 popupAddImgClose.addEventListener('click', addImgClose);
+handleHopupImgClose.addEventListener('click', closePopupImg);
 
 
 
